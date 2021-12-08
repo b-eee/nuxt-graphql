@@ -7,6 +7,7 @@
     <nav>
       <router-link exact to="/" class='link'>Index</router-link>
       <router-link exact to="/workspaces" class='link'>Workspaces</router-link>
+      <router-link exact to="/application" class='link'>Applications</router-link>
     </nav>
   </header>
 </template>

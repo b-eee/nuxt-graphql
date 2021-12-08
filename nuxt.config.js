@@ -18,7 +18,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '~/static/hexabase_logo.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/hexabase_logo.png' }
     ]
   },
 
