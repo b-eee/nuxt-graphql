@@ -21,7 +21,7 @@
           <ul>
             <li>
               <div class="description">
-                <p> <span> current workspace id: </span>{{workspaces.current_workspace_id}}</p>
+                <p> <span>Current workspace id: </span>{{workspaces.current_workspace_id}}</p>
               </div>
             </li>
             <li v-for="workspace in workspaces.workspaces" :key="workspace.id">
@@ -100,5 +100,10 @@ export default {
     width: 100%;
     max-width: 250px;
     margin-right: 20px;
+  }
+  .form-body{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
   }
 </style>
