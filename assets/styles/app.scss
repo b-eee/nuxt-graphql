@@ -1,0 +1,47 @@
+header {
+  text-align: center;
+}
+header .order {
+  margin-top: 20px;
+}
+button {
+  margin: 0 10px;
+  color: #1195c9;
+  border: 3px solid #1195c9;
+  background: #d5f0ff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+header .title{
+  /* display: flex; */
+  justify-content: center;
+}
+header img {
+  width: 100%;
+  max-width: 250px;
+  margin-right: 20px;
+}
+.form-body{
+  margin-top: 5px;
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  text-align: center;
+
+}
+.input-text{
+  height: 30px;
+  padding: 2px;
+  margin-bottom: 15px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #eee;
+  outline: none;
+}
+.result{
+  margin-top: 30px;
+}

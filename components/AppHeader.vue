@@ -1,12 +1,12 @@
 <template>
   <header>
     <a class="flex justify-center pt-8 sm:pt-0" href="https://apidoc.hexabase.com/" target="_blank">
-      <img alt="hexabase logo" src="~/static/hexabase.png">
+      <img class="img-logo" alt="hexabase logo" src="~/static/hexabase.png">
     </a>
     <h1>Hexabase Nuxtjs Graphql</h1>
     <nav>
       <router-link exact to="/" class='link'>Index</router-link>
-      <router-link exact to="/workspaces" class='link'>Workspaces</router-link>
+      <router-link exact to="/workspace" class='link'>Workspaces</router-link>
       <router-link exact to="/application" class='link'>Applications</router-link>
     </nav>
   </header>
@@ -38,5 +38,8 @@
   .nuxt-link-active {
     font-weight: bold;
     text-decoration: underline;
+  }
+  .img-logo{
+    max-width: 200px;
   }
 </style>

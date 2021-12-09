@@ -24,6 +24,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/styles/app.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -32,6 +33,11 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+
+  publicRuntimeConfig: {
+    token: process.env.TOKEN,
+  },
+  privateRuntimeConfig: {},
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -43,6 +49,7 @@ export default {
   modules: [
     '@nuxtjs/apollo',
   ],
+
   apollo: {
     clientConfigs: {
       default: '~/apollo/apollo-config.js'
@@ -50,7 +57,7 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-   build: {
+  build: {
     extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
