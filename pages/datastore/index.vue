@@ -7,12 +7,15 @@
           <input class="input-text" type="text" v-model="AppDs.application_id" placeholder="enter the application id" />
           <button  @click="getDs" >Get Datastores</button>
         </div>
-        <!-- <router-link exact to="/datastore/create" class='link'> Create datastores</router-link> -->
       </div>
     </div>
     <div class="workpaces-list"  v-if="datastores">
       <div name="list" tag="ul">
-          <h2>Datastores</h2>
+          <h2>Datastores:</h2>
+          <ul>
+            <li v-if="pendding">Loading...</li>
+            <li v-if="errors">{{errors}}</li>
+          </ul>
           <ul>
             <li v-for="datastore in datastores" :key="datastore">
               <div>{{datastore}}</div>
@@ -29,6 +32,8 @@ export default {
   name: 'DATASTORES',
   data() {
     return {
+      errors: '',
+      pendding: null,
       datastores: [],
       AppDs: {
         application_id: '',
@@ -37,6 +42,7 @@ export default {
   },
   methods: {
     getDs(){
+      this.pendding = true
       this.$apollo
       .query({
         query: GET_DATASTORES,
@@ -45,10 +51,14 @@ export default {
         }
       })
       .then(response => {
+        this.pendding = false
         this.datastores = response.data.getApplicationDatastores;
       })
       .catch(error => {
         console.log(error);
+        this.errors = JSON.stringify(er)
+        this.pendding = false
+
       });
     },
   }

@@ -21,7 +21,8 @@ const additiveLink = from([
     }));
     return forward(operation);
   }),
-  new HttpLink({ uri: "https://hxb-graph.hexabase.com/graphql" })
+  // new HttpLink({ uri: "https://hxb-graph.hexabase.com/graphql" })
+  new HttpLink({ uri: "http://localhost:8082/graphql" })
 ]);
 
 return {

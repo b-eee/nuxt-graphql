@@ -9,6 +9,7 @@
       <router-link exact to="/workspace" class='link'>Workspaces</router-link>
       <router-link exact to="/application" class='link'>Applications</router-link>
       <router-link exact to="/datastore" class='link'>Datastores</router-link>
+      <router-link exact to="/item" class='link'>Items</router-link>
     </nav>
   </header>
 </template>

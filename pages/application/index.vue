@@ -12,7 +12,11 @@
     </div>
     <div class="workpaces-list"  v-if="applications">
       <div name="list" tag="ul">
-          <h2>Applications</h2>
+          <h2>Applications:</h2>
+          <ul>
+            <li v-if="pendding">Loading...</li>
+            <li v-if="errors">{{errors}}</li>
+          </ul>
           <ul>
             <li v-for="application in applications" :key="application.application_id">
               <div class="description">
@@ -43,6 +47,8 @@ export default {
   name: 'WORKSPACES',
   data() {
     return {
+      errors: '',
+      pendding: null,
       applications: [],
       AppDs: {
         workspace_id: '',
@@ -51,6 +57,7 @@ export default {
   },
   methods: {
     getAppDs(){
+      this.pendding = true
       this.$apollo
       .query({
         query: GET_APPLICATIONDATASTORE,
@@ -60,9 +67,13 @@ export default {
       })
       .then(response => {
         this.applications = response.data.getApplicationAndDataStore;
+        this.pendding = false
       })
       .catch(error => {
         console.log(error);
+        this.errors = JSON.stringify(er)
+        this.pendding = false
+
       });
     },
   }
