@@ -68,9 +68,9 @@ export default {
         this.totalItems = response.data.datastoreGetDatastoreItems.totalItems
         this.pendding = false
       })
-      .catch(er => {
+      .catch(error => {
         console.log(er)
-        this.errors = JSON.stringify(er)
+        this.errors = error
         this.pendding = false
       });
     },

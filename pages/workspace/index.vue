@@ -55,7 +55,7 @@ export default {
       })
       .catch(er => {
         console.log(er);
-        this.errors = JSON.stringify(er)
+        this.errors = er
         this.pendding = false
 
       });

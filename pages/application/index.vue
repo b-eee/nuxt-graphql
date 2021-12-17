@@ -71,9 +71,8 @@ export default {
       })
       .catch(error => {
         console.log(error);
-        this.errors = JSON.stringify(er)
+        this.errors = error
         this.pendding = false
-
       });
     },
   }
